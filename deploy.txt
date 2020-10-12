@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#echo "creating virtual environment"
+#mkdir ~/opera && cd ~/opera
+#python3 -m venv .venv && . .venv/bin/activate
+#pip install opera
+#pip install boto3 botocore ansible opera --user
+
+
+
+echo "activating virtual environment"
+. ~/opera/.venv/bin/activate
+
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+echo "ServerlessToDoListAPI.csar"
+unzip -o ServerlessToDoListAPI.csar
+opera deploy _definitions/radonblueprints__ServerlessToDoListAPI.tosca
+
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+#echo "executing opera deploy on straight CSAR"
+#opera init --inputs inputs.yaml test_deploy_csar_w1-wip1.csar
+#opera deploy
